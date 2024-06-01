@@ -18,3 +18,6 @@ go:
 	docker compose exec go bash
 main:
 	docker compose exec go bash -c 'go run /go/src/app/main.go'
+ac:
+	docker compose exec go bash -c 'go run /go/src/app/main.go < /go/src/app/input.txt'
+
