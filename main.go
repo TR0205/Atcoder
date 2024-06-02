@@ -1,18 +1,12 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
+	m := map[string]int{"apple": 100, "banana": 200}
+	fmt.Println(m)
+	fmt.Println(m["apple"])
 
-	scanner.Scan()
-	s := scanner.Text()
-	// fmt.Printf("s: %s\n", s)
-	fmt.Println(strings.Count(s, "1"))
-
+	v, ok := m["invalid"]
+	fmt.Println(v, ok) // 0 false
 }
