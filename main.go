@@ -1,27 +1,56 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strings"
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	s := scanner.Text()
+	var n int
+	fmt.Scanf("%d", &n)
 
-	fmt.Println(strings.Count(s, "1"))
+	a := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Scan((&a[i]))
+	}
 
-	// var nums []int
+	counts := make([]int, n)
+	for i, v := range a {
+		counts[i] = 0
+		// 条件を満たしている間ループし続ける
+		for v%2 == 0 {
+			v /= 2
+			counts[i]++
+		}
+	}
+
+	// AtCoderで使われているGoのバージョン1.20.6だと存在しない？
+	// fmt.Println(slices.Max(counts))
+	// fmt.Println(counts)
+
+	// 以下で代用
+	min := counts[0]
+	for _, v := range counts {
+		if min > v {
+			min = v
+		}
+	}
+	fmt.Println(min)
+
+	// scanner := bufio.NewScanner(os.Stdin)
+	// // scanner.Scan()
+	// // s := scanner.Text()
+
+	// // fmt.Println(strings.Count(s, "1"))
+
+	// var count int
 	// if scanner.Scan() {
 	// 	line := scanner.Text()
 	// 	// 空白(スペースやタブ)を区切り文字として文字列を分割
 	// 	fields := strings.Fields(line)
 	// 	for _, field := range fields {
-	// 		num, _ := strconv.Atoi(field)
-	// 		nums = append(nums, num)
+	// 		for field % 2 != 0 {
+	// 			count++
+	// 		}
 	// 	}
 	// }
 
