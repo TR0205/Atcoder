@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// 各要素が割り切れる回数をcountsに格納し、最小値を求めて出力する。
 func main() {
 	var n int
 	fmt.Scanf("%d", &n)
