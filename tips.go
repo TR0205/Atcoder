@@ -34,3 +34,14 @@ func createSlice() {
 
 	fmt.Println(a)
 }
+
+// 二次元スライスの生成
+func generate2DimensionSlice() {
+	n := 3
+	s := 11
+	// 3*11のスライスを生成
+	dp := make([][]bool, n)
+	for i := range dp {
+		dp[i] = make([]bool, s)
+	}
+}
