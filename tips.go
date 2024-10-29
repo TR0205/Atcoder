@@ -45,3 +45,14 @@ func generate2DimensionSlice() {
 		dp[i] = make([]bool, s)
 	}
 }
+
+// ランダムな文字数の文字列をスライスへ格納
+func stringSlice() {
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	input := scanner.Text()
+
+	charSlice := strings.Split(input, "")
+
+	fmt.Println(charSlice)
+}
