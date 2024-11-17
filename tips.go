@@ -56,3 +56,10 @@ func stringSlice() {
 
 	fmt.Println(charSlice)
 }
+
+// スライスを空白区切りで出力。Printlnだと改行されてしまう
+func outputSlice() {
+	for _, v := range a {
+		fmt.Print(v, " ")
+	}
+}
